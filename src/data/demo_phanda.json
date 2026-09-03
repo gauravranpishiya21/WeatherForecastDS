@@ -1,0 +1,2940 @@
+{
+ "block_id": "phanda",
+ "block": "Phanda",
+ "district": "Bhopal",
+ "state": "Madhya Pradesh",
+ "center_lat": 23.275,
+ "center_lon": 77.335,
+ "generated_on": "2026-09-03",
+ "source": "Snapshot of real Open-Meteo forecast + elevation API output, downscaled with lapse-rate model. For offline demo use.",
+ "coarse": [
+  {
+   "date": "2026-09-03",
+   "temp_max": 26.4,
+   "temp_min": 22.7,
+   "rainfall_mm": 12.5,
+   "humidity": 85.5,
+   "wind_kmh": 20.6,
+   "weather_code": 80,
+   "weather_desc": "Slight rain showers"
+  },
+  {
+   "date": "2026-09-04",
+   "temp_max": 24.4,
+   "temp_min": 22.2,
+   "rainfall_mm": 64.1,
+   "humidity": 93.8,
+   "wind_kmh": 21.2,
+   "weather_code": 95,
+   "weather_desc": "Thunderstorm"
+  },
+  {
+   "date": "2026-09-05",
+   "temp_max": 26.1,
+   "temp_min": 22.4,
+   "rainfall_mm": 24.8,
+   "humidity": 90.4,
+   "wind_kmh": 21.6,
+   "weather_code": 81,
+   "weather_desc": "Moderate rain showers"
+  },
+  {
+   "date": "2026-09-06",
+   "temp_max": 27.6,
+   "temp_min": 22.6,
+   "rainfall_mm": 15.1,
+   "humidity": 89.4,
+   "wind_kmh": 20.1,
+   "weather_code": 95,
+   "weather_desc": "Thunderstorm"
+  },
+  {
+   "date": "2026-09-07",
+   "temp_max": 29.4,
+   "temp_min": 22.6,
+   "rainfall_mm": 1.2,
+   "humidity": 81.9,
+   "wind_kmh": 17.6,
+   "weather_code": 51,
+   "weather_desc": "Light drizzle"
+  },
+  {
+   "date": "2026-09-08",
+   "temp_max": 29.3,
+   "temp_min": 22.2,
+   "rainfall_mm": 0.0,
+   "humidity": 79.2,
+   "wind_kmh": 18.3,
+   "weather_code": 3,
+   "weather_desc": "Overcast"
+  },
+  {
+   "date": "2026-09-09",
+   "temp_max": 28.8,
+   "temp_min": 21.5,
+   "rainfall_mm": 0.9,
+   "humidity": 80.8,
+   "wind_kmh": 17.6,
+   "weather_code": 51,
+   "weather_desc": "Light drizzle"
+  }
+ ],
+ "villages": [
+  {
+   "id": "phanda",
+   "name": "Phanda",
+   "hindi_name": "फांदा",
+   "lat": 23.22559,
+   "lon": 77.21019,
+   "elevation_m": 519.0,
+   "population": 6800,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": true,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 21.0,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.7,
+     "humidity": 93.8,
+     "wind_kmh": 21.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 22.0,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.7mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "acharpura",
+   "name": "Acharpura",
+   "hindi_name": "अचारपुरा",
+   "lat": 23.265,
+   "lon": 77.29,
+   "elevation_m": 515.0,
+   "population": 3400,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.9,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.6,
+     "humidity": 93.8,
+     "wind_kmh": 21.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 21.9,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.6mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "amjhira",
+   "name": "Amjhira",
+   "hindi_name": "अमझिरा",
+   "lat": 23.31,
+   "lon": 77.35,
+   "elevation_m": 500.0,
+   "population": 2900,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.6,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.6,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.3,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "arwaliya",
+   "name": "Arwaliya",
+   "hindi_name": "अड़वालिया",
+   "lat": 23.245,
+   "lon": 77.32,
+   "elevation_m": 508.0,
+   "population": 4100,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.8,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.4,
+     "humidity": 93.8,
+     "wind_kmh": 21.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.4mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bagroda",
+   "name": "Bagroda",
+   "hindi_name": "बगरौदा",
+   "lat": 23.33,
+   "lon": 77.3,
+   "elevation_m": 500.0,
+   "population": 2600,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.6,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.6,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.3,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bhanpur",
+   "name": "Bhanpur",
+   "hindi_name": "भानपुर",
+   "lat": 23.3,
+   "lon": 77.37,
+   "elevation_m": 506.0,
+   "population": 5200,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.7,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "berkheda",
+   "name": "Berkheda",
+   "hindi_name": "बेरखेड़ा",
+   "lat": 23.255,
+   "lon": 77.36,
+   "elevation_m": 507.0,
+   "population": 3800,
+   "main_crops": [
+    "Soybean",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bhauri",
+   "name": "Bhauri",
+   "hindi_name": "भौरी",
+   "lat": 23.285,
+   "lon": 77.27,
+   "elevation_m": 527.0,
+   "population": 4700,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.2,
+     "temp_min": 22.5,
+     "rainfall_mm": 12.7,
+     "humidity": 85.5,
+     "wind_kmh": 21.2,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.2,
+     "temp_min": 22.0,
+     "rainfall_mm": 65.0,
+     "humidity": 93.8,
+     "wind_kmh": 21.8,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 25.9,
+     "temp_min": 22.2,
+     "rainfall_mm": 25.1,
+     "humidity": 90.4,
+     "wind_kmh": 22.2,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.4,
+     "temp_min": 22.4,
+     "rainfall_mm": 15.3,
+     "humidity": 89.4,
+     "wind_kmh": 20.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.2,
+     "temp_min": 22.4,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.1,
+     "temp_min": 22.0,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.8,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.6,
+     "temp_min": 21.3,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 65,
+     "description": "Heavy rainfall of 65.0mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chandukhedi",
+   "name": "Chandukhedi",
+   "hindi_name": "चांदूखेड़ी",
+   "lat": 23.32,
+   "lon": 77.33,
+   "elevation_m": 499.0,
+   "population": 2100,
+   "main_crops": [
+    "Soybean",
+    "Maize"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.6,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.6,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.3,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dhamarra",
+   "name": "Dhamarra",
+   "hindi_name": "धमर्रा",
+   "lat": 23.24,
+   "lon": 77.345,
+   "elevation_m": 509.0,
+   "population": 1900,
+   "main_crops": [
+    "Chickpea",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.8,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.4,
+     "humidity": 93.8,
+     "wind_kmh": 21.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.5,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.4mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dobra",
+   "name": "Dobra",
+   "hindi_name": "डोबरा",
+   "lat": 23.305,
+   "lon": 77.295,
+   "elevation_m": 506.0,
+   "population": 1600,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.7,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gunga",
+   "name": "Gunga",
+   "hindi_name": "गूंगा",
+   "lat": 23.27,
+   "lon": 77.38,
+   "elevation_m": 586.0,
+   "population": 3300,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 25.8,
+     "temp_min": 22.1,
+     "rainfall_mm": 13.0,
+     "humidity": 85.5,
+     "wind_kmh": 22.4,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 23.8,
+     "temp_min": 21.6,
+     "rainfall_mm": 66.9,
+     "humidity": 93.8,
+     "wind_kmh": 23.0,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 25.5,
+     "temp_min": 21.8,
+     "rainfall_mm": 25.9,
+     "humidity": 90.4,
+     "wind_kmh": 23.5,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.0,
+     "temp_min": 22.0,
+     "rainfall_mm": 15.7,
+     "humidity": 89.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 28.8,
+     "temp_min": 22.0,
+     "rainfall_mm": 1.3,
+     "humidity": 81.9,
+     "wind_kmh": 19.1,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 28.7,
+     "temp_min": 21.6,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 19.9,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.2,
+     "temp_min": 20.9,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 19.1,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 66,
+     "description": "Heavy rainfall of 66.9mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "intkhedi",
+   "name": "Intkhedi",
+   "hindi_name": "ईंटखेड़ी",
+   "lat": 23.25,
+   "lon": 77.305,
+   "elevation_m": 509.0,
+   "population": 2400,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.8,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.4,
+     "humidity": 93.8,
+     "wind_kmh": 21.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.5,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.4mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jhagariya",
+   "name": "Jhagariya",
+   "hindi_name": "झागरिया",
+   "lat": 23.335,
+   "lon": 77.355,
+   "elevation_m": 493.0,
+   "population": 2800,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.5,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.5,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.0,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.5,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.2,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.5,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kalapani",
+   "name": "Kalapani",
+   "hindi_name": "कालापानी",
+   "lat": 23.295,
+   "lon": 77.25,
+   "elevation_m": 529.0,
+   "population": 1500,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.2,
+     "temp_min": 22.5,
+     "rainfall_mm": 12.7,
+     "humidity": 85.5,
+     "wind_kmh": 21.2,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.2,
+     "temp_min": 22.0,
+     "rainfall_mm": 65.0,
+     "humidity": 93.8,
+     "wind_kmh": 21.8,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 25.9,
+     "temp_min": 22.2,
+     "rainfall_mm": 25.2,
+     "humidity": 90.4,
+     "wind_kmh": 22.2,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.4,
+     "temp_min": 22.4,
+     "rainfall_mm": 15.3,
+     "humidity": 89.4,
+     "wind_kmh": 20.7,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.2,
+     "temp_min": 22.4,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.1,
+     "temp_min": 22.0,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.8,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.6,
+     "temp_min": 21.3,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 65,
+     "description": "Heavy rainfall of 65.0mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "katara",
+   "name": "Katara",
+   "hindi_name": "कटारा",
+   "lat": 23.26,
+   "lon": 77.395,
+   "elevation_m": 527.0,
+   "population": 6100,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.2,
+     "temp_min": 22.5,
+     "rainfall_mm": 12.7,
+     "humidity": 85.5,
+     "wind_kmh": 21.2,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.2,
+     "temp_min": 22.0,
+     "rainfall_mm": 65.0,
+     "humidity": 93.8,
+     "wind_kmh": 21.8,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 25.9,
+     "temp_min": 22.2,
+     "rainfall_mm": 25.1,
+     "humidity": 90.4,
+     "wind_kmh": 22.2,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.4,
+     "temp_min": 22.4,
+     "rainfall_mm": 15.3,
+     "humidity": 89.4,
+     "wind_kmh": 20.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.2,
+     "temp_min": 22.4,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.1,
+     "temp_min": 22.0,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.8,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.6,
+     "temp_min": 21.3,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 18.1,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 65,
+     "description": "Heavy rainfall of 65.0mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "khamkheda",
+   "name": "Khamkheda",
+   "hindi_name": "खामखेड़ा",
+   "lat": 23.315,
+   "lon": 77.385,
+   "elevation_m": 494.0,
+   "population": 2200,
+   "main_crops": [
+    "Soybean",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.5,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.5,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.0,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.5,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.2,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.5,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "khajuri",
+   "name": "Khajuri",
+   "hindi_name": "खजूरी",
+   "lat": 23.23,
+   "lon": 77.33,
+   "elevation_m": 507.0,
+   "population": 3500,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kolukhedi",
+   "name": "Kolukhedi",
+   "hindi_name": "कोलूखेड़ी",
+   "lat": 23.34,
+   "lon": 77.315,
+   "elevation_m": 506.0,
+   "population": 1800,
+   "main_crops": [
+    "Maize",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.7,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mubarakpur",
+   "name": "Mubarakpur",
+   "hindi_name": "मुबारकपुर",
+   "lat": 23.28,
+   "lon": 77.36,
+   "elevation_m": 518.0,
+   "population": 4100,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 21.0,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.7,
+     "humidity": 93.8,
+     "wind_kmh": 21.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 22.0,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.7mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "narela",
+   "name": "Narela",
+   "hindi_name": "नरेला",
+   "lat": 23.3,
+   "lon": 77.405,
+   "elevation_m": 499.0,
+   "population": 5400,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.6,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.6,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.3,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nazirabad",
+   "name": "Nazirabad",
+   "hindi_name": "नजीराबाद",
+   "lat": 23.35,
+   "lon": 77.34,
+   "elevation_m": 495.0,
+   "population": 2300,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.5,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.1,
+     "humidity": 93.8,
+     "wind_kmh": 21.1,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.8,
+     "humidity": 90.4,
+     "wind_kmh": 21.5,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.1,
+     "humidity": 89.4,
+     "wind_kmh": 20.0,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.3,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.6,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.1mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "parwaliya",
+   "name": "Parwaliya",
+   "hindi_name": "परवलिया",
+   "lat": 23.225,
+   "lon": 77.37,
+   "elevation_m": 519.0,
+   "population": 3900,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 21.0,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.7,
+     "humidity": 93.8,
+     "wind_kmh": 21.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 22.0,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.7mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prithvipura",
+   "name": "Prithvipura",
+   "hindi_name": "पृथ्वीपुरा",
+   "lat": 23.265,
+   "lon": 77.255,
+   "elevation_m": 516.0,
+   "population": 1700,
+   "main_crops": [
+    "Soybean",
+    "Maize"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.9,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.6,
+     "humidity": 93.8,
+     "wind_kmh": 21.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 21.9,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.6mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ratanpur",
+   "name": "Ratanpur",
+   "hindi_name": "रतनपुर",
+   "lat": 23.325,
+   "lon": 77.27,
+   "elevation_m": 515.0,
+   "population": 2000,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.9,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.6,
+     "humidity": 93.8,
+     "wind_kmh": 21.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 21.9,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.9,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.6mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "samasgarh",
+   "name": "Samasgarh",
+   "hindi_name": "समसगढ़",
+   "lat": 23.36,
+   "lon": 77.295,
+   "elevation_m": 514.0,
+   "population": 2600,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 20.9,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.5,
+     "humidity": 93.8,
+     "wind_kmh": 21.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 21.9,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.4,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.6,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.8,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.5mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sewaniya",
+   "name": "Sewaniya",
+   "hindi_name": "सेवनिया",
+   "lat": 23.245,
+   "lon": 77.385,
+   "elevation_m": 507.0,
+   "population": 3100,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.4,
+     "temp_min": 22.7,
+     "rainfall_mm": 12.5,
+     "humidity": 85.5,
+     "wind_kmh": 20.7,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.4,
+     "temp_min": 22.2,
+     "rainfall_mm": 64.3,
+     "humidity": 93.8,
+     "wind_kmh": 21.3,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.1,
+     "temp_min": 22.4,
+     "rainfall_mm": 24.9,
+     "humidity": 90.4,
+     "wind_kmh": 21.8,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.6,
+     "temp_min": 22.6,
+     "rainfall_mm": 15.2,
+     "humidity": 89.4,
+     "wind_kmh": 20.2,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.4,
+     "temp_min": 22.6,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.3,
+     "temp_min": 22.2,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.4,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.8,
+     "temp_min": 21.5,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 17.7,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.3mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "teelakhedi",
+   "name": "Teelakhedi",
+   "hindi_name": "टीलाखेड़ी",
+   "lat": 23.29,
+   "lon": 77.33,
+   "elevation_m": 520.0,
+   "population": 1400,
+   "main_crops": [
+    "Chickpea",
+    "Mustard"
+   ],
+   "geocoded": false,
+   "daily": [
+    {
+     "date": "2026-09-03",
+     "temp_max": 26.3,
+     "temp_min": 22.6,
+     "rainfall_mm": 12.6,
+     "humidity": 85.5,
+     "wind_kmh": 21.0,
+     "weather_desc": "Slight rain showers"
+    },
+    {
+     "date": "2026-09-04",
+     "temp_max": 24.3,
+     "temp_min": 22.1,
+     "rainfall_mm": 64.7,
+     "humidity": 93.8,
+     "wind_kmh": 21.6,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-05",
+     "temp_max": 26.0,
+     "temp_min": 22.3,
+     "rainfall_mm": 25.0,
+     "humidity": 90.4,
+     "wind_kmh": 22.0,
+     "weather_desc": "Moderate rain showers"
+    },
+    {
+     "date": "2026-09-06",
+     "temp_max": 27.5,
+     "temp_min": 22.5,
+     "rainfall_mm": 15.3,
+     "humidity": 89.4,
+     "wind_kmh": 20.5,
+     "weather_desc": "Thunderstorm"
+    },
+    {
+     "date": "2026-09-07",
+     "temp_max": 29.3,
+     "temp_min": 22.5,
+     "rainfall_mm": 1.2,
+     "humidity": 81.9,
+     "wind_kmh": 18.0,
+     "weather_desc": "Light drizzle"
+    },
+    {
+     "date": "2026-09-08",
+     "temp_max": 29.2,
+     "temp_min": 22.1,
+     "rainfall_mm": 0.0,
+     "humidity": 79.2,
+     "wind_kmh": 18.7,
+     "weather_desc": "Overcast"
+    },
+    {
+     "date": "2026-09-09",
+     "temp_max": 28.7,
+     "temp_min": 21.4,
+     "rainfall_mm": 0.9,
+     "humidity": 80.8,
+     "wind_kmh": 18.0,
+     "weather_desc": "Light drizzle"
+    }
+   ],
+   "risk_level": "High",
+   "risk_color": "orange",
+   "top_risk": "High Humidity Disease",
+   "risks": [
+    {
+     "type": "Waterlogging",
+     "severity": 64,
+     "description": "Heavy rainfall of 64.7mm expected.",
+     "actions": [
+      "Ensure proper field drainage",
+      "Delay fertilizer application"
+     ]
+    },
+    {
+     "type": "High Humidity Disease",
+     "severity": 75,
+     "description": "Prolonged high humidity conditions favorable for fungal diseases.",
+     "actions": [
+      "Monitor for fungal infections",
+      "Apply preventive fungicides if necessary"
+     ]
+    }
+   ]
+  }
+ ]
+}

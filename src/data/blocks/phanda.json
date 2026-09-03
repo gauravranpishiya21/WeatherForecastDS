@@ -1,0 +1,375 @@
+{
+ "block": "Phanda",
+ "center_lat": 23.275,
+ "center_lon": 77.335,
+ "district": "Bhopal",
+ "note": "Demo dataset for SIH prototype. Village coordinates are approximate locations within Phanda block, Bhopal (MP); elevations are refreshed live from the Open-Meteo elevation API at runtime.",
+ "state": "Madhya Pradesh",
+ "villages": [
+  {
+   "elevation_m": 540,
+   "hindi_name": "फांदा",
+   "id": "phanda",
+   "lat": 23.22559,
+   "lon": 77.21019,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Phanda",
+   "population": 6800,
+   "geocoded": true
+  },
+  {
+   "elevation_m": 535,
+   "hindi_name": "अचारपुरा",
+   "id": "acharpura",
+   "lat": 23.265,
+   "lon": 77.29,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "name": "Acharpura",
+   "population": 3400
+  },
+  {
+   "elevation_m": 545,
+   "hindi_name": "अमझिरा",
+   "id": "amjhira",
+   "lat": 23.31,
+   "lon": 77.35,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "name": "Amjhira",
+   "population": 2900
+  },
+  {
+   "elevation_m": 530,
+   "hindi_name": "अड़वालिया",
+   "id": "arwaliya",
+   "lat": 23.245,
+   "lon": 77.32,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Arwaliya",
+   "population": 4100
+  },
+  {
+   "elevation_m": 550,
+   "hindi_name": "बगरौदा",
+   "id": "bagroda",
+   "lat": 23.33,
+   "lon": 77.3,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "name": "Bagroda",
+   "population": 2600
+  },
+  {
+   "elevation_m": 538,
+   "hindi_name": "भानपुर",
+   "id": "bhanpur",
+   "lat": 23.3,
+   "lon": 77.37,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "name": "Bhanpur",
+   "population": 5200
+  },
+  {
+   "elevation_m": 528,
+   "hindi_name": "बेरखेड़ा",
+   "id": "berkheda",
+   "lat": 23.255,
+   "lon": 77.36,
+   "main_crops": [
+    "Soybean",
+    "Mustard"
+   ],
+   "name": "Berkheda",
+   "population": 3800
+  },
+  {
+   "elevation_m": 542,
+   "hindi_name": "भौरी",
+   "id": "bhauri",
+   "lat": 23.285,
+   "lon": 77.27,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "name": "Bhauri",
+   "population": 4700
+  },
+  {
+   "elevation_m": 552,
+   "hindi_name": "चांदूखेड़ी",
+   "id": "chandukhedi",
+   "lat": 23.32,
+   "lon": 77.33,
+   "main_crops": [
+    "Soybean",
+    "Maize"
+   ],
+   "name": "Chandukhedi",
+   "population": 2100
+  },
+  {
+   "elevation_m": 525,
+   "hindi_name": "धमर्रा",
+   "id": "dhamarra",
+   "lat": 23.24,
+   "lon": 77.345,
+   "main_crops": [
+    "Chickpea",
+    "Wheat"
+   ],
+   "name": "Dhamarra",
+   "population": 1900
+  },
+  {
+   "elevation_m": 548,
+   "hindi_name": "डोबरा",
+   "id": "dobra",
+   "lat": 23.305,
+   "lon": 77.295,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Dobra",
+   "population": 1600
+  },
+  {
+   "elevation_m": 532,
+   "hindi_name": "गूंगा",
+   "id": "gunga",
+   "lat": 23.27,
+   "lon": 77.38,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "name": "Gunga",
+   "population": 3300
+  },
+  {
+   "elevation_m": 536,
+   "hindi_name": "ईंटखेड़ी",
+   "id": "intkhedi",
+   "lat": 23.25,
+   "lon": 77.305,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "name": "Intkhedi",
+   "population": 2400
+  },
+  {
+   "elevation_m": 555,
+   "hindi_name": "झागरिया",
+   "id": "jhagariya",
+   "lat": 23.335,
+   "lon": 77.355,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "name": "Jhagariya",
+   "population": 2800
+  },
+  {
+   "elevation_m": 560,
+   "hindi_name": "कालापानी",
+   "id": "kalapani",
+   "lat": 23.295,
+   "lon": 77.25,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Kalapani",
+   "population": 1500
+  },
+  {
+   "elevation_m": 522,
+   "hindi_name": "कटारा",
+   "id": "katara",
+   "lat": 23.26,
+   "lon": 77.395,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "name": "Katara",
+   "population": 6100
+  },
+  {
+   "elevation_m": 530,
+   "hindi_name": "खामखेड़ा",
+   "id": "khamkheda",
+   "lat": 23.315,
+   "lon": 77.385,
+   "main_crops": [
+    "Soybean",
+    "Mustard"
+   ],
+   "name": "Khamkheda",
+   "population": 2200
+  },
+  {
+   "elevation_m": 518,
+   "hindi_name": "खजूरी",
+   "id": "khajuri",
+   "lat": 23.23,
+   "lon": 77.33,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "name": "Khajuri",
+   "population": 3500
+  },
+  {
+   "elevation_m": 565,
+   "hindi_name": "कोलूखेड़ी",
+   "id": "kolukhedi",
+   "lat": 23.34,
+   "lon": 77.315,
+   "main_crops": [
+    "Maize",
+    "Wheat"
+   ],
+   "name": "Kolukhedi",
+   "population": 1800
+  },
+  {
+   "elevation_m": 534,
+   "hindi_name": "मुबारकपुर",
+   "id": "mubarakpur",
+   "lat": 23.28,
+   "lon": 77.36,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Mubarakpur",
+   "population": 4100
+  },
+  {
+   "elevation_m": 520,
+   "hindi_name": "नरेला",
+   "id": "narela",
+   "lat": 23.3,
+   "lon": 77.405,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "name": "Narela",
+   "population": 5400
+  },
+  {
+   "elevation_m": 570,
+   "hindi_name": "नजीराबाद",
+   "id": "nazirabad",
+   "lat": 23.35,
+   "lon": 77.34,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "name": "Nazirabad",
+   "population": 2300
+  },
+  {
+   "elevation_m": 515,
+   "hindi_name": "परवलिया",
+   "id": "parwaliya",
+   "lat": 23.225,
+   "lon": 77.37,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "name": "Parwaliya",
+   "population": 3900
+  },
+  {
+   "elevation_m": 555,
+   "hindi_name": "पृथ्वीपुरा",
+   "id": "prithvipura",
+   "lat": 23.265,
+   "lon": 77.255,
+   "main_crops": [
+    "Soybean",
+    "Maize"
+   ],
+   "name": "Prithvipura",
+   "population": 1700
+  },
+  {
+   "elevation_m": 558,
+   "hindi_name": "रतनपुर",
+   "id": "ratanpur",
+   "lat": 23.325,
+   "lon": 77.27,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "name": "Ratanpur",
+   "population": 2000
+  },
+  {
+   "elevation_m": 575,
+   "hindi_name": "समसगढ़",
+   "id": "samasgarh",
+   "lat": 23.36,
+   "lon": 77.295,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "name": "Samasgarh",
+   "population": 2600
+  },
+  {
+   "elevation_m": 512,
+   "hindi_name": "सेवनिया",
+   "id": "sewaniya",
+   "lat": 23.245,
+   "lon": 77.385,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Sewaniya",
+   "population": 3100
+  },
+  {
+   "elevation_m": 541,
+   "hindi_name": "टीलाखेड़ी",
+   "id": "teelakhedi",
+   "lat": 23.29,
+   "lon": 77.33,
+   "main_crops": [
+    "Chickpea",
+    "Mustard"
+   ],
+   "name": "Teelakhedi",
+   "population": 1400
+  }
+ ]
+}

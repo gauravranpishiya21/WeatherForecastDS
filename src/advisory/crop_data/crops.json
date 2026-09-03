@@ -1,0 +1,391 @@
+[
+  {
+    "name": "Rice",
+    "hindi_name": "Chawal",
+    "scientific_name": "Oryza sativa",
+    "seasons": ["kharif", "rabi"],
+    "irrigation_sensitivity": "high",
+    "growth_stages": [
+      {
+        "name": "germination",
+        "duration_days": 10,
+        "optimal_temp_min": 20,
+        "optimal_temp_max": 35,
+        "critical_temp_min": 10,
+        "critical_temp_max": 40,
+        "optimal_rainfall_mm_per_week": 50,
+        "max_rainfall_mm_per_day": 150,
+        "optimal_humidity_min": 70,
+        "optimal_humidity_max": 90,
+        "wind_damage_threshold_kmh": 40
+      },
+      {
+        "name": "vegetative",
+        "duration_days": 40,
+        "optimal_temp_min": 25,
+        "optimal_temp_max": 35,
+        "critical_temp_min": 15,
+        "critical_temp_max": 40,
+        "optimal_rainfall_mm_per_week": 80,
+        "max_rainfall_mm_per_day": 200,
+        "optimal_humidity_min": 75,
+        "optimal_humidity_max": 95,
+        "wind_damage_threshold_kmh": 50
+      },
+      {
+        "name": "flowering",
+        "duration_days": 30,
+        "optimal_temp_min": 25,
+        "optimal_temp_max": 33,
+        "critical_temp_min": 20,
+        "critical_temp_max": 38,
+        "optimal_rainfall_mm_per_week": 60,
+        "max_rainfall_mm_per_day": 100,
+        "optimal_humidity_min": 70,
+        "optimal_humidity_max": 85,
+        "wind_damage_threshold_kmh": 35
+      },
+      {
+        "name": "maturity",
+        "duration_days": 30,
+        "optimal_temp_min": 20,
+        "optimal_temp_max": 30,
+        "critical_temp_min": 15,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 0,
+        "max_rainfall_mm_per_day": 50,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 70,
+        "wind_damage_threshold_kmh": 40
+      }
+    ],
+    "pest_conditions": [
+      {
+        "pest_name": "Stem Borer",
+        "temp_min": 25,
+        "temp_max": 30,
+        "humidity_min": 80
+      }
+    ]
+  },
+  {
+    "name": "Wheat",
+    "hindi_name": "Gehu",
+    "scientific_name": "Triticum aestivum",
+    "seasons": ["rabi"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "germination",
+        "duration_days": 15,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 25,
+        "critical_temp_min": 4,
+        "critical_temp_max": 30,
+        "optimal_rainfall_mm_per_week": 10,
+        "max_rainfall_mm_per_day": 30,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 70,
+        "wind_damage_threshold_kmh": 40
+      },
+      {
+        "name": "vegetative",
+        "duration_days": 45,
+        "optimal_temp_min": 10,
+        "optimal_temp_max": 22,
+        "critical_temp_min": 0,
+        "critical_temp_max": 28,
+        "optimal_rainfall_mm_per_week": 15,
+        "max_rainfall_mm_per_day": 50,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 80,
+        "wind_damage_threshold_kmh": 50
+      },
+      {
+        "name": "flowering",
+        "duration_days": 30,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 25,
+        "critical_temp_min": 10,
+        "critical_temp_max": 32,
+        "optimal_rainfall_mm_per_week": 10,
+        "max_rainfall_mm_per_day": 40,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 75,
+        "wind_damage_threshold_kmh": 35
+      },
+      {
+        "name": "maturity",
+        "duration_days": 30,
+        "optimal_temp_min": 20,
+        "optimal_temp_max": 30,
+        "critical_temp_min": 15,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 0,
+        "max_rainfall_mm_per_day": 20,
+        "optimal_humidity_min": 40,
+        "optimal_humidity_max": 60,
+        "wind_damage_threshold_kmh": 45
+      }
+    ],
+    "pest_conditions": [
+      {
+        "pest_name": "Rust",
+        "temp_min": 15,
+        "temp_max": 22,
+        "humidity_min": 85
+      }
+    ]
+  },
+  {
+    "name": "Maize",
+    "hindi_name": "Makka",
+    "scientific_name": "Zea mays",
+    "seasons": ["kharif", "rabi", "zaid"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "germination",
+        "duration_days": 10,
+        "optimal_temp_min": 21,
+        "optimal_temp_max": 27,
+        "critical_temp_min": 10,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 20,
+        "max_rainfall_mm_per_day": 50,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 75,
+        "wind_damage_threshold_kmh": 40
+      }
+    ],
+    "pest_conditions": [
+      {
+        "pest_name": "Fall Armyworm",
+        "temp_min": 20,
+        "temp_max": 30,
+        "humidity_min": 60
+      }
+    ]
+  },
+  {
+    "name": "Cotton",
+    "hindi_name": "Kapas",
+    "scientific_name": "Gossypium",
+    "seasons": ["kharif"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "vegetative",
+        "duration_days": 45,
+        "optimal_temp_min": 21,
+        "optimal_temp_max": 32,
+        "critical_temp_min": 15,
+        "critical_temp_max": 38,
+        "optimal_rainfall_mm_per_week": 30,
+        "max_rainfall_mm_per_day": 80,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 70,
+        "wind_damage_threshold_kmh": 50
+      }
+    ],
+    "pest_conditions": [
+      {
+        "pest_name": "Bollworm",
+        "temp_min": 25,
+        "temp_max": 35,
+        "humidity_min": 70
+      }
+    ]
+  },
+  {
+    "name": "Sugarcane",
+    "hindi_name": "Ganna",
+    "scientific_name": "Saccharum officinarum",
+    "seasons": ["kharif", "rabi"],
+    "irrigation_sensitivity": "high",
+    "growth_stages": [
+      {
+        "name": "tillering",
+        "duration_days": 90,
+        "optimal_temp_min": 25,
+        "optimal_temp_max": 32,
+        "critical_temp_min": 15,
+        "critical_temp_max": 40,
+        "optimal_rainfall_mm_per_week": 40,
+        "max_rainfall_mm_per_day": 100,
+        "optimal_humidity_min": 65,
+        "optimal_humidity_max": 85,
+        "wind_damage_threshold_kmh": 60
+      }
+    ],
+    "pest_conditions": [
+      {
+        "pest_name": "Shoot borer",
+        "temp_min": 30,
+        "temp_max": 35,
+        "humidity_min": 40
+      }
+    ]
+  },
+  {
+    "name": "Soybean",
+    "hindi_name": "Soyabean",
+    "scientific_name": "Glycine max",
+    "seasons": ["kharif"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "flowering",
+        "duration_days": 30,
+        "optimal_temp_min": 20,
+        "optimal_temp_max": 30,
+        "critical_temp_min": 15,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 35,
+        "max_rainfall_mm_per_day": 70,
+        "optimal_humidity_min": 60,
+        "optimal_humidity_max": 80,
+        "wind_damage_threshold_kmh": 40
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Mustard",
+    "hindi_name": "Sarson",
+    "scientific_name": "Brassica juncea",
+    "seasons": ["rabi"],
+    "irrigation_sensitivity": "low",
+    "growth_stages": [
+      {
+        "name": "vegetative",
+        "duration_days": 40,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 25,
+        "critical_temp_min": 5,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 10,
+        "max_rainfall_mm_per_day": 40,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 75,
+        "wind_damage_threshold_kmh": 40
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Chickpea",
+    "hindi_name": "Chana",
+    "scientific_name": "Cicer arietinum",
+    "seasons": ["rabi"],
+    "irrigation_sensitivity": "low",
+    "growth_stages": [
+      {
+        "name": "flowering",
+        "duration_days": 30,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 25,
+        "critical_temp_min": 5,
+        "critical_temp_max": 30,
+        "optimal_rainfall_mm_per_week": 5,
+        "max_rainfall_mm_per_day": 20,
+        "optimal_humidity_min": 40,
+        "optimal_humidity_max": 60,
+        "wind_damage_threshold_kmh": 35
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Groundnut",
+    "hindi_name": "Mungfali",
+    "scientific_name": "Arachis hypogaea",
+    "seasons": ["kharif"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "pegging",
+        "duration_days": 40,
+        "optimal_temp_min": 25,
+        "optimal_temp_max": 30,
+        "critical_temp_min": 15,
+        "critical_temp_max": 35,
+        "optimal_rainfall_mm_per_week": 25,
+        "max_rainfall_mm_per_day": 60,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 75,
+        "wind_damage_threshold_kmh": 45
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Tomato",
+    "hindi_name": "Tamatar",
+    "scientific_name": "Solanum lycopersicum",
+    "seasons": ["kharif", "rabi", "zaid"],
+    "irrigation_sensitivity": "high",
+    "growth_stages": [
+      {
+        "name": "fruiting",
+        "duration_days": 50,
+        "optimal_temp_min": 21,
+        "optimal_temp_max": 27,
+        "critical_temp_min": 10,
+        "critical_temp_max": 32,
+        "optimal_rainfall_mm_per_week": 30,
+        "max_rainfall_mm_per_day": 70,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 80,
+        "wind_damage_threshold_kmh": 30
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Potato",
+    "hindi_name": "Aloo",
+    "scientific_name": "Solanum tuberosum",
+    "seasons": ["rabi"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "tuber_bulking",
+        "duration_days": 45,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 20,
+        "critical_temp_min": 5,
+        "critical_temp_max": 28,
+        "optimal_rainfall_mm_per_week": 20,
+        "max_rainfall_mm_per_day": 50,
+        "optimal_humidity_min": 60,
+        "optimal_humidity_max": 80,
+        "wind_damage_threshold_kmh": 35
+      }
+    ],
+    "pest_conditions": []
+  },
+  {
+    "name": "Onion",
+    "hindi_name": "Pyaz",
+    "scientific_name": "Allium cepa",
+    "seasons": ["kharif", "rabi"],
+    "irrigation_sensitivity": "medium",
+    "growth_stages": [
+      {
+        "name": "bulb_formation",
+        "duration_days": 40,
+        "optimal_temp_min": 15,
+        "optimal_temp_max": 25,
+        "critical_temp_min": 10,
+        "critical_temp_max": 30,
+        "optimal_rainfall_mm_per_week": 15,
+        "max_rainfall_mm_per_day": 40,
+        "optimal_humidity_min": 50,
+        "optimal_humidity_max": 70,
+        "wind_damage_threshold_kmh": 30
+      }
+    ],
+    "pest_conditions": []
+  }
+]

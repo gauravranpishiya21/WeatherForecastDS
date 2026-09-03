@@ -1,0 +1,226 @@
+"""Block-level Panchayat View.
+
+Phanda block (Bhopal, MP): all 28 panchayat villages on one map,
+each with today's downscaled weather + weekly risk level.
+This is the core SIH demo: Block (~25 km) -> Panchayat (~1 km).
+
+Two data sources (toggle at top):
+  - Live API: real-time Open-Meteo + elevation data (needs internet + API server)
+  - Demo snapshot: bundled offline snapshot of real pipeline output (always works)
+"""
+
+import json
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # dashboard/
+from components.gmaps import gmaps_block_html, get_maps_key
+
+import streamlit as st
+import httpx
+import pandas as pd
+import folium
+from streamlit_folium import st_folium
+
+st.set_page_config(page_title="Block Panchayats", page_icon="🏘️", layout="wide")
+
+BLOCKS = {"Phanda": "phanda", "Berasia": "berasia"}
+block_label = st.radio("Block (Bhopal district, MP)", list(BLOCKS.keys()), horizontal=True)
+bid = BLOCKS[block_label]
+st.title(f"🏘️ {block_label} Block, Bhopal (MP) — Panchayat-Level Intelligence")
+st.caption("Block-level forecast downscaled to panchayat villages (~1 km resolution)")
+
+API_BASE = "http://localhost:8000"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "src" / "data"
+
+mode = st.radio(
+    "Data source",
+    ["🔴 Live API", "📦 Demo snapshot (offline)"],
+    horizontal=True,
+    help="Demo snapshot is bundled real pipeline output — use it on stage if the internet fails.",
+)
+use_demo = mode.startswith("📦")
+
+
+def _load_snapshot(snap_path: Path) -> dict | None:
+    try:
+        snap = json.loads(snap_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        st.error(f"Demo snapshot missing: {e}")
+        return None
+    villages = []
+    for v in snap["villages"]:
+        t = v["daily"][0]
+        villages.append({
+            "id": v["id"], "name": v["name"], "hindi_name": v["hindi_name"],
+            "lat": v["lat"], "lon": v["lon"], "elevation_m": v["elevation_m"],
+            "population": v.get("population"), "main_crops": v.get("main_crops", []),
+            "today": {
+                "temp_max": t["temp_max"], "temp_min": t["temp_min"],
+                "rainfall_mm": t["rainfall_mm"], "humidity": t["humidity"],
+                "wind_kmh": t["wind_kmh"], "weather_desc": t["weather_desc"],
+            },
+            "risk": {"level": v["risk_level"], "color": v["risk_color"],
+                     "top_risk": v["top_risk"], "severity": 0},
+        })
+    return {
+        "block": snap["block"], "district": snap["district"], "state": snap["state"],
+        "center_lat": snap["center_lat"], "center_lon": snap["center_lon"],
+        "total_panchayats": len(villages), "date": snap["coarse"][0]["date"] if snap.get("coarse") else "",
+        "generated_on": snap.get("generated_on", ""), "villages": villages,
+    }
+
+
+def _fetch_live() -> dict | None:
+    try:
+        resp = httpx.get(f"{API_BASE}/api/panchayats", params={"block_id": bid}, timeout=60)
+        if resp.status_code == 200:
+            return resp.json()
+    except Exception as e:
+        st.warning(f"Could not connect to API: {e}")
+    return None
+
+
+if use_demo:
+    data = _load_snapshot(DATA_DIR / f"demo_{bid}.json")
+    if data:
+        st.info(f"📦 Offline demo snapshot (real data captured on {data.get('generated_on', 'N/A')}) — no internet needed.")
+else:
+    data = _fetch_live()
+    if data:
+        st.success("🔴 Live data from API.")
+    else:
+        st.error("Unable to fetch block data. Ensure the API server is running on port 8000, or switch to 📦 Demo snapshot.")
+
+if data is None:
+    st.stop()
+
+villages = data.get("villages", [])
+st.success(f"📍 {data['block']} Block, {data['district']} ({data['state']}) — {data['total_panchayats']} panchayats | Date: {data.get('date', '')}")
+
+# --- Summary metrics ---
+temps = [v["today"]["temp_max"] for v in villages]
+rains = [v["today"]["rainfall_mm"] for v in villages]
+high_risk = [v for v in villages if v["risk"]["level"] in ("High", "Critical")]
+
+m1, m2, m3, m4 = st.columns(4)
+with m1:
+    st.metric("Panchayats", len(villages))
+with m2:
+    st.metric("Avg Max Temp", f"{sum(temps)/len(temps):.1f}°C" if temps else "N/A")
+with m3:
+    st.metric("Max Rainfall (village)", f"{max(rains):.1f} mm" if rains else "N/A")
+with m4:
+    st.metric("High/Critical Risk", len(high_risk))
+
+# --- Map with all villages ---
+st.subheader("🗺️ Panchayat Map (color = risk level)")
+_maps_key = get_maps_key()
+_map_opts = ["Google Maps", "OpenStreetMap"] if _maps_key else ["OpenStreetMap"]
+_map_style = st.radio("Map style", _map_opts, horizontal=True,
+                      help="Google Maps needs the API key in .env; OpenStreetMap always works.")
+if _map_style == "Google Maps":
+    st.components.v1.html(
+        gmaps_block_html(villages, data["center_lat"], data["center_lon"], _maps_key),
+        height=440,
+    )
+else:
+    m = folium.Map(
+        location=[data["center_lat"], data["center_lon"]],
+        zoom_start=12, tiles="OpenStreetMap",
+    )
+    # Approximate block extent overlay (district -> block -> panchayats story)
+    folium.Circle(
+        [data["center_lat"], data["center_lon"]], radius=9000,
+        color="blue", weight=2, dash_array="6 6",
+        fill=True, fill_opacity=0.04,
+        popup=f"{data['block']} Block extent (approx.)",
+        tooltip=f"{data['block']} Block",
+    ).add_to(m)
+    risk_icon = {"green": "green", "yellow": "orange", "orange": "orange", "red": "red"}
+    for v in villages:
+        t = v["today"]
+        r = v["risk"]
+        popup = (
+            f"<b>{v['name']} ({v['hindi_name']})</b><br>"
+            f"Elev: {v['elevation_m']} m<br>"
+            f"Temp: {t['temp_max']}° / {t['temp_min']}°C<br>"
+            f"Rain: {t['rainfall_mm']} mm | Hum: {t['humidity']}%<br>"
+            f"Risk: {r['level']} ({r['top_risk']})"
+        )
+        folium.CircleMarker(
+            [v["lat"], v["lon"]], radius=9,
+            color=risk_icon.get(r["color"], "gray"),
+            fill=True, fill_opacity=0.75,
+            popup=folium.Popup(popup, max_width=220),
+            tooltip=f"{v['name']} — {r['level']}",
+        ).add_to(m)
+    st_folium(m, width=None, height=420)
+
+# --- Village table ---
+st.subheader("📋 All Panchayats — Today's Downscaled Weather")
+rows = [{
+    "Village": v["name"],
+    "Elev (m)": v["elevation_m"],
+    "Max °C": v["today"]["temp_max"],
+    "Min °C": v["today"]["temp_min"],
+    "Rain (mm)": v["today"]["rainfall_mm"],
+    "Humidity %": v["today"]["humidity"],
+    "Wind (km/h)": v["today"]["wind_kmh"],
+    "Risk": v["risk"]["level"],
+    "Top Risk": v["risk"]["top_risk"],
+} for v in villages]
+df = pd.DataFrame(rows).sort_values("Village").reset_index(drop=True)
+st.dataframe(df, use_container_width=True, hide_index=True)
+
+# --- Village detail ---
+st.divider()
+st.subheader("🔍 Panchayat Detail — 7-Day Forecast")
+names = {v["name"]: v["id"] for v in villages}
+choice = st.selectbox("Select panchayat", list(names.keys()))
+
+detail = None
+if use_demo:
+    snap = json.loads((DATA_DIR / f"demo_{bid}.json").read_text(encoding="utf-8"))
+    v = next(x for x in snap["villages"] if x["id"] == names[choice])
+    detail = {
+        "name": v["name"], "hindi_name": v["hindi_name"],
+        "elevation_m": v["elevation_m"], "main_crops": v.get("main_crops", []),
+        "forecast": [{
+            "date": d["date"], "temp_max": d["temp_max"], "temp_min": d["temp_min"],
+            "rainfall_mm": d["rainfall_mm"], "humidity": d["humidity"],
+            "wind_kmh": d["wind_kmh"], "weather_desc": d["weather_desc"],
+        } for d in v["daily"]],
+        "risks": v.get("risks", []),
+    }
+else:
+    try:
+        resp = httpx.get(f"{API_BASE}/api/panchayats/{names[choice]}", params={"block_id": bid}, timeout=60)
+        if resp.status_code == 200:
+            detail = resp.json()
+    except Exception as e:
+        st.warning(f"Detail fetch failed: {e}")
+
+if detail:
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.metric("Village", f"{detail['name']} ({detail['hindi_name']})")
+    with c2:
+        st.metric("Elevation", f"{detail['elevation_m']} m")
+    with c3:
+        st.metric("Main Crops", ", ".join(detail.get("main_crops", [])) or "—")
+
+    drows = [{
+        "Date": d["date"], "Max °C": d["temp_max"], "Min °C": d["temp_min"],
+        "Rain (mm)": d["rainfall_mm"], "Humidity %": d["humidity"],
+        "Wind (km/h)": d["wind_kmh"], "Condition": d["weather_desc"],
+    } for d in detail["forecast"]]
+    st.dataframe(pd.DataFrame(drows), use_container_width=True, hide_index=True)
+
+    if detail["risks"]:
+        for r in detail["risks"]:
+            st.warning(f"⚠️ **{r['type']}** (severity {r['severity']}): {r['description']}")
+    else:
+        st.success("🟢 No significant risks this week.")
+
+    st.info("👉 For a full crop advisory, open the **Advisory** page and pick this panchayat there.")

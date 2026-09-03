@@ -1,0 +1,195 @@
+{
+ "block": "Berasia",
+ "center_lat": 23.63,
+ "center_lon": 77.435,
+ "district": "Bhopal",
+ "note": "Demo dataset for SIH prototype. Village coordinates are approximate locations within Berasia block, Bhopal (MP); elevations are refreshed live from the Open-Meteo elevation API at runtime.",
+ "state": "Madhya Pradesh",
+ "villages": [
+  {
+   "elevation_m": 470,
+   "hindi_name": "बेरसिया",
+   "id": "berasia",
+   "lat": 23.63134,
+   "lon": 77.43351,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Berasia",
+   "population": 25000,
+   "geocoded": true
+  },
+  {
+   "elevation_m": 465,
+   "hindi_name": "आगरा",
+   "id": "agra",
+   "lat": 23.61,
+   "lon": 77.41,
+   "main_crops": [
+    "Wheat",
+    "Chickpea"
+   ],
+   "name": "Agra",
+   "population": 4200
+  },
+  {
+   "elevation_m": 475,
+   "hindi_name": "अर्जुनखेड़ी",
+   "id": "arjunkhedi",
+   "lat": 23.7275,
+   "lon": 77.59359,
+   "main_crops": [
+    "Soybean",
+    "Maize"
+   ],
+   "name": "Arjunkhedi",
+   "population": 1800,
+   "geocoded": true
+  },
+  {
+   "elevation_m": 460,
+   "hindi_name": "बगोनिया",
+   "id": "bagoniya",
+   "lat": 23.6,
+   "lon": 77.45,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "name": "Bagoniya",
+   "population": 2400
+  },
+  {
+   "elevation_m": 472,
+   "hindi_name": "बरखेड़ा",
+   "id": "barkheda",
+   "lat": 23.65,
+   "lon": 77.4,
+   "main_crops": [
+    "Soybean",
+    "Mustard"
+   ],
+   "name": "Barkheda",
+   "population": 2100
+  },
+  {
+   "elevation_m": 458,
+   "hindi_name": "चांचेड़",
+   "id": "chanched",
+   "lat": 23.58,
+   "lon": 77.44,
+   "main_crops": [
+    "Chickpea",
+    "Wheat"
+   ],
+   "name": "Chanched",
+   "population": 1600
+  },
+  {
+   "elevation_m": 480,
+   "hindi_name": "डोडी",
+   "id": "dodi",
+   "lat": 23.67,
+   "lon": 77.42,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Dodi",
+   "population": 1400
+  },
+  {
+   "elevation_m": 462,
+   "hindi_name": "इकोदिया",
+   "id": "ikodiya",
+   "lat": 23.62,
+   "lon": 77.47,
+   "main_crops": [
+    "Mustard",
+    "Wheat"
+   ],
+   "name": "Ikodiya",
+   "population": 1900
+  },
+  {
+   "elevation_m": 455,
+   "hindi_name": "जामूसरकलां",
+   "id": "jamusarkalan",
+   "lat": 23.57,
+   "lon": 77.41,
+   "main_crops": [
+    "Soybean",
+    "Chickpea"
+   ],
+   "name": "Jamusar Kalan",
+   "population": 1700
+  },
+  {
+   "elevation_m": 485,
+   "hindi_name": "खेजड़ा घाट",
+   "id": "khejraghat",
+   "lat": 23.72139,
+   "lon": 77.60922,
+   "main_crops": [
+    "Maize",
+    "Soybean"
+   ],
+   "name": "Khejra Ghat",
+   "population": 1200,
+   "geocoded": true
+  },
+  {
+   "elevation_m": 460,
+   "hindi_name": "ललरिया",
+   "id": "lalariya",
+   "lat": 23.59,
+   "lon": 77.48,
+   "main_crops": [
+    "Wheat",
+    "Mustard"
+   ],
+   "name": "Lalariya",
+   "population": 2000
+  },
+  {
+   "elevation_m": 476,
+   "hindi_name": "मणिखेड़ी",
+   "id": "manikhedi",
+   "lat": 23.64,
+   "lon": 77.38,
+   "main_crops": [
+    "Soybean",
+    "Wheat"
+   ],
+   "name": "Manikhedi",
+   "population": 1500
+  },
+  {
+   "elevation_m": 452,
+   "hindi_name": "पीपलिया",
+   "id": "pipaliya",
+   "lat": 23.56,
+   "lon": 77.45,
+   "main_crops": [
+    "Chickpea",
+    "Mustard"
+   ],
+   "name": "Pipaliya",
+   "population": 1300
+  },
+  {
+   "elevation_m": 490,
+   "hindi_name": "रामपुरा",
+   "id": "rampura",
+   "lat": 23.69,
+   "lon": 77.43,
+   "main_crops": [
+    "Wheat",
+    "Soybean"
+   ],
+   "name": "Rampura",
+   "population": 1100
+  }
+ ]
+}
