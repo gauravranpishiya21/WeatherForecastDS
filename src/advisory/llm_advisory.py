@@ -11,7 +11,10 @@ key is configured or the SDK is not installed — the pipeline never breaks.
 
 from typing import List, Optional
 from pydantic import BaseModel
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from .crop_rules import CropAdvisory
 from .risk_assessment import WeatherRisk

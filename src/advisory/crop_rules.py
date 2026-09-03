@@ -3,7 +3,10 @@ import os
 from datetime import date
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 class PestCondition(BaseModel):
     pest_name: str

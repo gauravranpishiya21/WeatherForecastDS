@@ -4,7 +4,10 @@ Supports English (en), Hindi (hi), Tamil (ta), Telugu (te), Marathi (mr),
 Kannada (kn), Bengali (bn), Gujarati (gu), Malayalam (ml), Punjabi (pa).
 """
 
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 
 # Comprehensive translations for common advisory terms in 10 Indian languages

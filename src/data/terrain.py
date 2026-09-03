@@ -3,7 +3,10 @@ import math
 from typing import List, Tuple
 import httpx
 import numpy as np
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 from pydantic import BaseModel, Field
 from cachetools import TTLCache
 

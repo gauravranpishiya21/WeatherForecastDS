@@ -2,7 +2,10 @@
 
 from fastapi import APIRouter, Query, HTTPException
 from typing import List, Dict
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from src.api.schemas import LocationInfo
 from src.data.geocoding import GeocodingService

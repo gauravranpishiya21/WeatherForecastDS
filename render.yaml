@@ -1,0 +1,34 @@
+# Render Blueprint — deploys both the FastAPI backend and the Streamlit dashboard.
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  # ---- FastAPI backend (optional for dashboard demo, powers live endpoints) ----
+  - type: web
+    name: weather-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /docs
+    envVars:
+      - key: ENV
+        value: production
+    region: oregon
+
+  # ---- Streamlit dashboard (main UI) ----
+  - type: web
+    name: weather-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash render_start.sh
+    envVars:
+      - key: ENV
+        value: production
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: "true"
+      - key: STREAMLIT_SERVER_ADDRESS
+        value: "0.0.0.0"
+      - key: STREAMLIT_CLIENT_TOOLBAR_MODE
+        value: minimal
+    region: oregon

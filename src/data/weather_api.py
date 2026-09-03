@@ -2,7 +2,10 @@ import asyncio
 import math
 from typing import List, Optional
 import httpx
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 from pydantic import BaseModel, Field
 
 # WMO Weather interpretation codes mapped to human-readable descriptions

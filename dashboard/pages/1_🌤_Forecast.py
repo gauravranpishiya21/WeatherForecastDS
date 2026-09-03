@@ -1,254 +1,187 @@
-"""7-Day Hyperlocal Forecast Page.
+"""7-Day Hyperlocal Forecast Page."""
 
-Displays downscaled weather forecast with interactive maps and charts.
-"""
+import json
+import sys
+from pathlib import Path
+from datetime import datetime
 
 import streamlit as st
-import httpx
 import plotly.graph_objects as go
-import plotly.express as px
-from datetime import datetime
 import folium
 from streamlit_folium import st_folium
 
-st.set_page_config(page_title="Forecast", page_icon="🌤", layout="wide")
+ROOT = Path(__file__).resolve().parent.parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-st.title("🌤 Hyperlocal 7-Day Forecast")
+from dashboard.components.theme import inject_weather_theme, navigate_if_needed
+from dashboard.components.data import load_all_villages, filter_villages, fetch_forecast
+
+st.set_page_config(page_title="Hyperlocal Forecast", page_icon="🌤️", layout="wide", initial_sidebar_state="collapsed")
+inject_weather_theme(hide_sidebar=True)
+navigate_if_needed("7-Day Forecast")
+
+st.title("🌤️ Hyperlocal 7-Day Downscaled Forecast")
+st.caption("Panchayat-level ~1 km resolution forecast powered by terrain-aware downscaling")
 
 lat = st.session_state.get("lat", 23.275)
 lon = st.session_state.get("lon", 77.335)
 API_BASE = "http://localhost:8000"
+DATA_DIR = ROOT / "src" / "data"
 
-# --- Village Search: any MP village -> its personal 7-day status ---
-st.subheader("🔍 Search MP Village")
-with st.form("vsearch_form", clear_on_submit=False):
-    sq = st.text_input("Village name", placeholder="e.g., Phanda, Samasgarh, Berasia…")
-    submitted = st.form_submit_button("🔍 Search")
+# Load ALL villages from both blocks (cached)
+all_villages = load_all_villages()
+village_map = {v["name"]: v for v in all_villages}
 
-if submitted and sq and len(sq.strip()) >= 2:
-    try:
-        r = httpx.get(f"{API_BASE}/api/search/villages",
-                      params={"q": sq.strip()}, timeout=25)
-        st.session_state["vcands"] = r.json().get("results", []) if r.status_code == 200 else []
-    except Exception as e:
-        st.warning(f"Search failed (is the API running?): {e}")
-        st.session_state["vcands"] = []
+st.subheader("🔍 Select Gram Panchayat Village")
+search_query = st.text_input(
+    "🔍 Search village",
+    placeholder="Type village name in English or Hindi (e.g., Phanda, फांदा, Berasia, Samasgarh...)",
+    key="forecast_search",
+    label_visibility="collapsed",
+)
 
-cands = st.session_state.get("vcands", [])
-if cands:
-    labels = [f"{c['name']} — {c.get('block', '')}, {c.get('district', '')} [{c['source']}]"
-              for c in cands]
-    pick = st.selectbox("Matching villages", labels, key="vpick")
-    if st.button("📍 Load village weather", key="vload"):
-        sel = cands[labels.index(pick)]
-        st.session_state["lat"] = sel["lat"]
-        st.session_state["lon"] = sel["lon"]
-        st.session_state["village_name"] = sel["name"]
-        st.rerun()
-elif submitted:
-    st.caption("No matching village found — try another spelling.")
+if search_query:
+    filtered = filter_villages(search_query)
+else:
+    filtered = all_villages
 
-# --- Fetch real forecast data from API ---
-data = None
-try:
-    resp = httpx.get(
-        f"{API_BASE}/api/forecast",
-        params={"lat": lat, "lon": lon, "days": 7},
-        timeout=30,
-    )
-    if resp.status_code == 200:
-        data = resp.json()
-except Exception as e:
-    st.warning(f"Could not connect to API: {e}")
+if filtered:
+    vlabels = [f"[{v['_block']}] {v['name']} ({v['hindi_name']}) — {v['elevation_m']}m" for v in filtered]
+    col_search, col_btn = st.columns([5, 1])
+    with col_search:
+        selected_label = st.selectbox("📍 Matching villages", vlabels, key="village_search")
+    with col_btn:
+        st.write("")
+        st.write("")
+        load_clicked = st.button("📍 Load Forecast", key="btn_load_v")
+
+    if load_clicked or st.session_state.get("village_name"):
+        if load_clicked:
+            v = filtered[vlabels.index(selected_label)]
+            st.session_state["lat"] = v["lat"]
+            st.session_state["lon"] = v["lon"]
+            st.session_state["village_name"] = v["name"]
+            st.session_state["selected_v"] = v
+            st.rerun()
+else:
+    st.info("No villages match your search. Try a different name.")
+
+lat = st.session_state.get("lat", lat)
+lon = st.session_state.get("lon", lon)
+
+# Fetch forecast data (fast — cached API availability)
+data = fetch_forecast(lat, lon, 7)
+is_live = data is not None
+
+# Fallback to snapshot
+if data is None:
+    sel = st.session_state.get("selected_v") or (all_villages[0] if all_villages else None)
+    if sel:
+        demo = sel["_demo"]
+        data = {
+            "location": {
+                "panchayat": sel["name"], "block": sel["_block"],
+                "district": demo.get("district", "Bhopal"), "state": demo.get("state", "MP"),
+                "lat": sel["lat"], "lon": sel["lon"],
+            },
+            "improvement_metrics": {"elevation_m": sel["elevation_m"], "model_type": "lapse_rate_ml_ensemble", "resolution": "1 km downscaled"},
+            "downscaled_forecast": [
+                {"date": d["date"], "temp_max": d["temp_max"], "temp_min": d["temp_min"],
+                 "rainfall_mm": d["rainfall_mm"], "humidity": d["humidity"],
+                 "wind_kmh": d["wind_kmh"], "weather_desc": d["weather_desc"]}
+                for d in sel["daily"]
+            ],
+            "coarse_forecast": demo.get("coarse", []),
+        }
 
 if data is None:
-    st.error("Unable to fetch forecast data. Please ensure the API server is running on port 8000.")
+    st.error("No forecast data available.")
     st.stop()
 
-# --- Location Info ---
 loc = data.get("location", {})
 metrics = data.get("improvement_metrics", {})
+location_name = st.session_state.get("village_name") or loc.get("panchayat") or f"{lat:.4f}, {lon:.4f}"
 
-col_header1, col_header2 = st.columns([3, 1])
-with col_header1:
-    location_parts = [v for v in [loc.get("panchayat"), loc.get("block"), loc.get("district"), loc.get("state")] if v]
-    location_str = ", ".join(location_parts) if location_parts else f"{lat:.4f}, {lon:.4f}"
-    title_name = st.session_state.get("village_name", "") or location_str
-    st.subheader(f"📍 {title_name}")
-    st.caption(f"Lat: {lat:.4f} | Lon: {lon:.4f} | Elevation: {metrics.get('elevation_m', 'N/A')}m")
+col_h1, col_h2 = st.columns([3, 1])
+with col_h1:
+    st.markdown(f"""
+    <div style="margin-top: 10px;">
+        <h2 style="margin: 0; color: #38bdf8;">📍 {location_name}</h2>
+        <p style="color: #94a3b8; margin: 4px 0 0 0;">
+            Block: <b>{loc.get('block', 'N/A')}</b>, District: <b>{loc.get('district', 'Bhopal')}</b> |
+            Lat: {lat:.4f}°, Lon: {lon:.4f}° | Elevation: <b>{metrics.get('elevation_m', 'N/A')} m</b>
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+with col_h2:
+    badge = "🟢 LIVE API DATA" if is_live else "📦 OFFLINE SNAPSHOT"
+    cls = "badge-green" if is_live else "badge-blue"
+    st.markdown(f"<span class='weather-badge {cls}'>{badge}</span>", unsafe_allow_html=True)
 
-with col_header2:
-    model_badge = metrics.get("model_type", "statistical_only")
-    if model_badge != "statistical_only":
-        st.success(f"🤖 ML Model: {model_badge.upper()}")
-    else:
-        st.info("📐 Statistical Downscaling")
+st.markdown("<br>", unsafe_allow_html=True)
 
-# --- Interactive Map ---
-st.subheader("🗺️ Interactive Map")
-m = folium.Map(location=[lat, lon], zoom_start=12, tiles="OpenStreetMap")
-folium.Marker(
-    [lat, lon],
-    popup=f"<b>{location_str}</b><br>Elevation: {metrics.get('elevation_m', 'N/A')}m",
-    icon=folium.Icon(color="red", icon="cloud", prefix="fa"),
-).add_to(m)
-
-# Add temperature heatmap markers for downscaled data
-coarse = data.get("coarse_forecast", [])
+# 7-Day Weather Cards
 downscaled = data.get("downscaled_forecast", [])
 if downscaled:
-    today = downscaled[0]
-    temp = today.get("temp_max", 25)
-    color = "red" if temp > 35 else "orange" if temp > 30 else "blue" if temp < 10 else "green"
-    folium.CircleMarker(
-        [lat, lon],
-        radius=20,
-        color=color,
-        fill=True,
-        fill_opacity=0.4,
-        popup=f"<b>Today</b><br>Temp: {temp}°C<br>Rain: {today.get('rainfall_mm', 0)}mm",
-    ).add_to(m)
-
-st_folium(m, width=None, height=350)
-
-# --- 7-Day Weather Cards ---
-st.subheader("📅 7-Day Weather Outlook")
-
-if downscaled:
-    cols = st.columns(7)
-    for i, day in enumerate(downscaled[:7]):
-        with cols[i]:
-            date_obj = datetime.strptime(day["date"], "%Y-%m-%d")
-            day_name = date_obj.strftime("%a")
-            date_str = date_obj.strftime("%d %b")
-
-            st.markdown(f"**{day_name}**")
-            st.caption(date_str)
-
-            # Weather icon based on conditions
-            rain = day.get("rainfall_mm", 0)
-            temp_max = day.get("temp_max", 25)
-            if rain > 10:
-                st.markdown("🌧️")
-            elif rain > 0:
-                st.markdown("🌦️")
-            elif temp_max > 35:
-                st.markdown("🔥")
-            elif temp_max < 5:
-                st.markdown("🥶")
-            else:
-                st.markdown("☀️")
-
-            st.markdown(f"**{temp_max:.1f}°** / {day.get('temp_min', 0):.1f}°")
-            st.caption(f"💧 {rain:.1f}mm")
-            st.caption(f"💨 {day.get('wind_kmh', 0):.0f} km/h")
-
-# --- Temperature & Rainfall Trend Charts ---
-# --- Rainfall Focus + Advisory Link (per-village, drives advisory) ---
-if downscaled:
-    st.subheader("🌧️ Rainfall Focus (next 7 days)")
-    tot_rain = sum(d.get("rainfall_mm", 0) for d in downscaled)
-    rainy_days = [d for d in downscaled if d.get("rainfall_mm", 0) >= 2.5]
-    heaviest = max(downscaled, key=lambda d: d.get("rainfall_mm", 0))
-    r1, r2, r3, r4 = st.columns(4)
-    with r1:
-        st.metric("Total Rain (7-day)", f"{tot_rain:.1f} mm")
-    with r2:
-        st.metric("Rainy Days (≥2.5mm)", len(rainy_days))
-    with r3:
-        st.metric("Heaviest Day", f"{heaviest['date'][5:]} ({heaviest.get('rainfall_mm', 0):.1f} mm)")
-    with r4:
-        if tot_rain >= 35:
-            verdict = "Skip irrigation — enough rain"
-        elif tot_rain >= 10:
-            verdict = "Light irrigation only if dry"
+    st.subheader("📅 7-Day Hyperlocal Outlook")
+    cols = st.columns(min(len(downscaled), 7))
+    for i, d in enumerate(downscaled[:7]):
+        dt = datetime.strptime(d["date"], "%Y-%m-%d") if "-" in d["date"] else datetime.now()
+        day_str = dt.strftime("%a, %d %b") if i > 0 else "Today"
+        rain = d.get("rainfall_mm", 0.0)
+        desc = d.get("weather_desc", "").lower()
+        if "rain" in desc or rain > 2.0:
+            icon = "🌧️"
+        elif "cloud" in desc or "overcast" in desc:
+            icon = "⛅"
+        elif "thunder" in desc:
+            icon = "⛈️"
         else:
-            verdict = "No useful rain — irrigate"
-        st.metric("Irrigation Verdict", verdict)
+            icon = "☀️"
+        with cols[i]:
+            st.markdown(f"""
+            <div class="glass-card" style="padding: 14px 10px; text-align: center; margin-bottom: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: #94a3b8;">{day_str}</div>
+                <div style="font-size: 32px; margin: 8px 0;">{icon}</div>
+                <div style="font-size: 18px; font-weight: 800; color: #f8fafc;">
+                    {d.get('temp_max', 0):.0f}° <span style="font-size: 13px; color: #64748b; font-weight: 500;">{d.get('temp_min', 0):.0f}°</span>
+                </div>
+                <div style="font-size: 12px; color: #38bdf8; margin-top: 6px; font-weight: 600;">💧 {rain:.1f} mm</div>
+                <div style="font-size: 11px; color: #cbd5e1; margin-top: 4px;">💨 {d.get('wind_kmh', 10):.0f} km/h</div>
+            </div>
+            """, unsafe_allow_html=True)
 
-    if st.button("🌾 Optimize advisory for this village →", type="primary"):
-        try:
-            st.switch_page("pages/2_🌾_Advisory.py")
-        except Exception:
-            st.caption("Open the **Advisory** page in the sidebar — this village is already selected.")
+# Charts & Map
+st.markdown("<br>", unsafe_allow_html=True)
+col_c1, col_c2 = st.columns([3, 2])
 
-st.subheader("📊 Weather Trends")
+with col_c1:
+    st.subheader("📈 Temperature & Precipitation")
+    dates = [d["date"] for d in downscaled]
+    t_max = [d.get("temp_max", 0) for d in downscaled]
+    t_min = [d.get("temp_min", 0) for d in downscaled]
+    rain_data = [d.get("rainfall_mm", 0) for d in downscaled]
 
-if downscaled:
-    col_chart1, col_chart2 = st.columns(2)
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=dates, y=t_max, name="Max Temp (°C)", mode="lines+markers", line=dict(color="#f87171", width=3)))
+    fig.add_trace(go.Scatter(x=dates, y=t_min, name="Min Temp (°C)", mode="lines+markers", line=dict(color="#38bdf8", width=3)))
+    fig.add_trace(go.Bar(x=dates, y=rain_data, name="Rainfall (mm)", yaxis="y2", marker_color="rgba(56, 189, 248, 0.4)"))
+    fig.update_layout(
+        paper_bgcolor="rgba(15, 23, 42, 0.0)", plot_bgcolor="rgba(15, 23, 42, 0.5)",
+        font=dict(color="#94a3b8"),
+        yaxis=dict(title="Temperature (°C)", gridcolor="rgba(255,255,255,0.06)"),
+        yaxis2=dict(title="Rainfall (mm)", overlaying="y", side="right", showgrid=False),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        margin=dict(l=10, r=10, t=20, b=10), height=340,
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
-    with col_chart1:
-        dates = [d["date"] for d in downscaled]
-        temp_max = [d["temp_max"] for d in downscaled]
-        temp_min = [d["temp_min"] for d in downscaled]
-        coarse_temp = [d["temp_max"] for d in coarse] if coarse else [None] * len(dates)
-
-        fig_temp = go.Figure()
-        fig_temp.add_trace(go.Scatter(
-            x=dates, y=temp_max, mode="lines+markers",
-            name="Downscaled Max", line=dict(color="#e74c3c", width=3),
-        ))
-        fig_temp.add_trace(go.Scatter(
-            x=dates, y=temp_min, mode="lines+markers",
-            name="Downscaled Min", line=dict(color="#3498db", width=3),
-        ))
-        if coarse and coarse[0].get("temp_max"):
-            fig_temp.add_trace(go.Scatter(
-                x=dates, y=[d["temp_max"] for d in coarse],
-                mode="lines", name="Coarse (Block)",
-                line=dict(color="#95a5a6", width=2, dash="dash"),
-            ))
-        fig_temp.update_layout(
-            title="Temperature (°C)", xaxis_title="Date", yaxis_title="Temp °C",
-            height=300, margin=dict(l=0, r=0, t=40, b=0),
-        )
-        st.plotly_chart(fig_temp, use_container_width=True)
-
-    with col_chart2:
-        rainfall = [d.get("rainfall_mm", 0) for d in downscaled]
-        humidity = [d.get("humidity", 60) for d in downscaled]
-
-        fig_rain = go.Figure()
-        fig_rain.add_trace(go.Bar(
-            x=dates, y=rainfall, name="Rainfall (mm)",
-            marker_color="#3498db",
-        ))
-        fig_rain.add_trace(go.Scatter(
-            x=dates, y=humidity, mode="lines+markers",
-            name="Humidity %", yaxis="y2",
-            line=dict(color="#2ecc71", width=2),
-        ))
-        fig_rain.update_layout(
-            title="Rainfall & Humidity",
-            xaxis_title="Date",
-            yaxis=dict(title="Rainfall (mm)", side="left"),
-            yaxis2=dict(title="Humidity (%)", overlaying="y", side="right", range=[0, 100]),
-            height=300, margin=dict(l=0, r=0, t=40, b=0),
-            legend=dict(x=0.01, y=0.99),
-        )
-        st.plotly_chart(fig_rain, use_container_width=True)
-
-    # --- Wind & Improvement Metrics ---
-    col_wind, col_metrics = st.columns([2, 1])
-
-    with col_wind:
-        wind = [d.get("wind_kmh", 0) for d in downscaled]
-        fig_wind = go.Figure()
-        fig_wind.add_trace(go.Scatter(
-            x=dates, y=wind, mode="lines+markers",
-            fill="tozeroy", name="Wind Speed (km/h)",
-            line=dict(color="#9b59b6", width=2),
-        ))
-        fig_wind.update_layout(
-            title="Wind Speed (km/h)", xaxis_title="Date", yaxis_title="km/h",
-            height=250, margin=dict(l=0, r=0, t=40, b=0),
-        )
-        st.plotly_chart(fig_wind, use_container_width=True)
-
-    with col_metrics:
-        st.subheader("Improvement Metrics")
-        for key, value in metrics.items():
-            label = key.replace("_", " ").title()
-            st.metric(label=label, value=str(value))
-else:
-    st.warning("No forecast data available.")
+with col_c2:
+    st.subheader("🗺️ Panchayat Map")
+    m = folium.Map(location=[lat, lon], zoom_start=12, tiles="CartoDB dark_matter")
+    folium.Marker([lat, lon], popup=f"<b>{location_name}</b><br>Elev: {metrics.get('elevation_m', 'N/A')}m",
+                  icon=folium.Icon(color="blue", icon="cloud", prefix="fa")).add_to(m)
+    folium.Circle([lat, lon], radius=1200, color="#38bdf8", fill=True, fill_opacity=0.18,
+                  tooltip="Panchayat 1km Radius").add_to(m)
+    st_folium(m, height=340, use_container_width=True)

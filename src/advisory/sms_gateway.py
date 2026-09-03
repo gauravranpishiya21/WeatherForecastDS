@@ -8,7 +8,10 @@ to demo. Set sms_dry_run=false + provider credentials in .env to go live.
 
 from typing import Optional
 import httpx
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 
 class SMSGateway:

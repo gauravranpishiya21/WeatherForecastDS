@@ -7,7 +7,10 @@ one coarse forecast at the block center + one batch elevation call.
 
 from typing import List, Optional
 from fastapi import APIRouter, HTTPException, Query
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 from pydantic import BaseModel
 
 from src.data.panchayats import PanchayatService, PanchayatVillage

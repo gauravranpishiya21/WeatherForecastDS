@@ -2,7 +2,10 @@ import asyncio
 import urllib.parse
 from typing import List, Optional, Dict, Any
 import httpx
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 from pydantic import BaseModel
 from cachetools import TTLCache
 

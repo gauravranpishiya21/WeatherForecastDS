@@ -6,7 +6,10 @@ import numpy as np
 import pandas as pd
 from typing import Dict, List, Any
 from pydantic import BaseModel, Field
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 class DownscalingFeatures(BaseModel):
     """Pydantic model for downscaling features."""

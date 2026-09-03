@@ -9,7 +9,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from xgboost import XGBRegressor
 from typing import Dict, Any, Tuple
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from src.downscaling.features import FeatureEngineering
 from src.downscaling.interpolation import StatisticalDownscaler

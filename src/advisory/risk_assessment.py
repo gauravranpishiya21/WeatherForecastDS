@@ -1,6 +1,9 @@
 from typing import List, Dict, Any
 from pydantic import BaseModel
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 class WeatherRisk(BaseModel):
     risk_type: str

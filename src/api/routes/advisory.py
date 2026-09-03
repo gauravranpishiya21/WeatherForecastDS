@@ -3,7 +3,10 @@
 from fastapi import APIRouter, HTTPException
 from datetime import datetime, timedelta
 from typing import Optional
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from src.api.schemas import (
     AdvisoryRequest, AdvisoryResponse, LocationInfo,

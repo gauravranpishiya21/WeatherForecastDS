@@ -8,7 +8,10 @@ Never 500s — live failure just returns dataset-only results.
 
 from typing import Optional
 from fastapi import APIRouter, Query
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from src.data.panchayats import PanchayatService
 from src.data.geocoding import GeocodingService

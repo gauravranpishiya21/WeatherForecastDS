@@ -10,7 +10,10 @@ demo locations refreshed with live elevations at request time.
 import json
 from pathlib import Path
 from typing import Dict, List, Optional
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 from pydantic import BaseModel, Field
 
 

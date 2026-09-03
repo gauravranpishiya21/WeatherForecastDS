@@ -8,7 +8,10 @@ import argparse
 import pandas as pd
 from pathlib import Path
 from sklearn.model_selection import train_test_split
-from loguru import logger
+try:
+    from loguru import logger
+except ImportError:
+    from src.utils.logger import logger
 
 from src.downscaling.ml_model import MLDownscaler, generate_synthetic_training_data
 
