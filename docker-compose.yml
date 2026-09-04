@@ -24,6 +24,7 @@ services:
     volumes:
       - ./src:/app/src
       - ./data:/app/data
+      - ./dashboard:/app/dashboard
     env_file:
       - .env
-    command: streamlit run src/dashboard/app.py --server.port 8501 --server.address 0.0.0.0
+    command: streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0
