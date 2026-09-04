@@ -60,7 +60,7 @@ __DROPS_CSS__
 
     if mode == "day":
         bg_css = """
-.stApp {
+.stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"] {
     background: radial-gradient(ellipse at 85% 10%, #38bdf8 0%, #0284c7 35%, #0369a1 70%, #075985 100%) !important;
     background-attachment: fixed !important;
 }
@@ -179,7 +179,7 @@ __DROPS_CSS__
 
     elif mode == "thunder":
         bg_css = """
-.stApp {
+.stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"] {
     background: radial-gradient(ellipse at 50% 0%, #0a0518 0%, #05020f 30%, #02010a 60%, #000000 100%) !important;
     background-attachment: fixed !important;
 }
@@ -265,6 +265,7 @@ __DROPS_CSS__
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
+    filter: drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 25px #60a5fa) drop-shadow(0 0 45px #a855f7);
     animation: strikeBijli1 3.5s ease-out infinite;
 }
 
@@ -286,6 +287,7 @@ __DROPS_CSS__
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
+    filter: drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 25px #38bdf8) drop-shadow(0 0 50px #9333ea);
     animation: strikeBijli2 4.2s ease-out infinite;
     animation-delay: 1.2s;
 }
@@ -308,6 +310,7 @@ __DROPS_CSS__
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 20px #818cf8) drop-shadow(0 0 38px #a855f7);
     animation: strikeBijli3 5.5s ease-out infinite;
     animation-delay: 2.5s;
 }
@@ -329,6 +332,7 @@ __DROPS_CSS__
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 18px #c084fc) drop-shadow(0 0 30px #7c3aed);
     animation: strikeBijli4 7s ease-out infinite;
     animation-delay: 0.8s;
 }
@@ -444,7 +448,7 @@ __DROPS_CSS__
 
     else:
         bg_css = """
-.stApp {
+.stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"] {
     background: radial-gradient(ellipse at 50% 0%, #0c1c38 0%, #060e22 45%, #02050e 100%) !important;
     background-attachment: fixed !important;
 }
@@ -533,7 +537,7 @@ __SHARED_RAIN_CSS__
     shared_rain_filled = shared_rain_css.replace("__DROPS_CSS__", drops_css)
     anim_css = anim_css.replace("__SHARED_RAIN_CSS__", shared_rain_filled)
 
-    full_css = f"""<style>
+    full_css = f"""
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"] {{
@@ -546,8 +550,13 @@ html, body, [class*="css"] {{
 
 [data-testid="stAppViewContainer"],
 [data-testid="stHeader"],
+[data-testid="stMain"],
+[data-testid="stMainBlockContainer"],
+section[data-testid="stMain"],
+section.main,
 .main,
-div[data-testid="stAppViewContainer"] > section:first-child {{
+div[data-testid="stAppViewContainer"] > section:first-child,
+div[data-testid="stAppViewBlockContainer"] {{
     background: transparent !important;
     background-color: transparent !important;
 }}
@@ -720,10 +729,15 @@ header[data-testid="stHeader"] {{
     h1 {{ font-size: 1.35rem !important; }}
     .block-container {{ padding-left: 0.4rem !important; padding-right: 0.4rem !important; }}
 }}
-</style>
-{elements_html}"""
+"""
+    # 1. Inject styling via st.markdown with unsafe_allow_html=True.
+    # st.markdown with unsafe_allow_html=True guarantees that <style> tags and keyframe
+    # animations are NEVER stripped by DOMPurify on Streamlit Community Cloud.
+    st.markdown(f"<style>\n{full_css}\n</style>", unsafe_allow_html=True)
 
-    st.html(full_css)
+    # 2. Inject live animation elements via st.markdown
+    if elements_html.strip():
+        st.markdown(elements_html, unsafe_allow_html=True)
 
 
 def render_top_navbar_with_theme(current_title: str = "Overview") -> str:
